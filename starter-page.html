@@ -48,10 +48,12 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://linkedin.com/in/gayathrianantharaman" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
+<div class="header-social-links">
+  <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+  <a href="https://linkedin.com/in/gayathrianantharaman" class="linkedin"><i class="bi bi-linkedin"></i></a>
+  <span id="visit-count" style="margin-left: 10px; font-size: 14px; color: #555;"></span>
+</div>
+
 
     </div>
   </header>
@@ -111,6 +113,14 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  const countKey = 'site-visit-count';
+  let visits = localStorage.getItem(countKey);
+  visits = visits ? parseInt(visits) + 1 : 1;
+  localStorage.setItem(countKey, visits);
+  document.getElementById('visit-count').innerText = `Visits: ${visits}`;
+</script>
+
 
 </body>
 
