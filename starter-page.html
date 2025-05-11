@@ -113,12 +113,20 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
+<script>
+  const sessionKey = 'site-visited';
   const countKey = 'site-visit-count';
-  let visits = localStorage.getItem(countKey);
-  visits = visits ? parseInt(visits) + 1 : 1;
-  localStorage.setItem(countKey, visits);
-  document.getElementById('visit-count').innerText = `Visits: ${visits}`;
+
+  // Only increment if this is a new session
+  if (!sessionStorage.getItem(sessionKey)) {
+    let visits = localStorage.getItem(countKey);
+    visits = visits ? parseInt(visits) + 1 : 1;
+    localStorage.setItem(countKey, visits);
+    sessionStorage.setItem(sessionKey, 'true');
+  }
+
+  const visits = localStorage.getItem(countKey);
+  document.getElementById('visit-count').innerText = `Site visit count: ${visits}`;
 </script>
 
 
