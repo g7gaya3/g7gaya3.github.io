@@ -18,7 +18,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
@@ -27,7 +26,6 @@
 
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">Gayathri</h1>
       </a>
@@ -43,17 +41,15 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-     <div class="header-social-links">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://linkedin.com/in/gayathrianantharaman" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <span id="visit-count" style="margin-left: 10px; font-size: 14px; color: #555;"></span>
-    </div>
-
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://linkedin.com/in/gayathrianantharaman" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <span id="visit-count" style="margin-left: 10px; font-size: 14px; color: #555;"></span>
+      </div>
     </div>
   </header>
 
   <main class="main">
-
     <section id="portfolio-details" class="portfolio-details section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Project Spotlight: FitFleet - An app enabling users to deliver items on foot while staying fit through gamification</h2>
@@ -61,28 +57,16 @@
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": { "delay": 5000 },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
+            <!-- PDF Embed Starts Here -->
+            <div class="embed-responsive embed-responsive-16by9">
               <iframe src="assets/docs/fitfleet-slides.pdf#toolbar=0" width="100%" height="500px" style="border: none;">
-  Your browser does not support PDFs. <a href="assets/docs/fitfleet-slides.pdf">Download the PDF</a>.
-</iframe>
+                Your browser does not support PDFs.
+                <a href="assets/docs/fitfleet-slides.pdf">Download the presentation</a>.
+              </iframe>
+            </div>
+            <!-- PDF Embed Ends Here -->
           </div>
 
           <div class="col-lg-4">
@@ -100,12 +84,9 @@
               <p>To add fuel to my curious product mind, I am always on the lookout for problems requiring simple solutions. The concept of an app for users to deliver items on foot, motivated by fitness gamification and environmental benefits, appears to occupy a relatively unexplored niche in the delivery market. The current technological solutions don't address the fitness motivation aspect that could make an on-foot delivery app attractive to health-conscious individuals looking to earn money while exercising. While elements of the proposed concept exist in various forms across the market, the specific combination of on-foot delivery with fitness gamification appears to be a novel approach that could potentially find a niche in the competitive delivery service landscape. </p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
-
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -131,26 +112,25 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/js/main.js"></script>
-<script>
-  const sessionKey = 'site-visited';
-  const countKey = 'site-visit-count';
 
-  // Only increment if this is a new session
-  if (!sessionStorage.getItem(sessionKey)) {
-    let visits = localStorage.getItem(countKey);
-    visits = visits ? parseInt(visits) + 1 : 1;
-    localStorage.setItem(countKey, visits);
-    sessionStorage.setItem(sessionKey, 'true');
-  }
+  <script>
+    const sessionKey = 'site-visited';
+    const countKey = 'site-visit-count';
 
-  const visits = localStorage.getItem(countKey);
-  document.getElementById('visit-count').innerText = `Site visits: ${visits}`;
-</script>
+    if (!sessionStorage.getItem(sessionKey)) {
+      let visits = localStorage.getItem(countKey);
+      visits = visits ? parseInt(visits) + 1 : 1;
+      localStorage.setItem(countKey, visits);
+      sessionStorage.setItem(sessionKey, 'true');
+    }
+
+    const visits = localStorage.getItem(countKey);
+    document.getElementById('visit-count').innerText = `Site visits: ${visits}`;
+  </script>
 
 </body>
 </html>
